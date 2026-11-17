@@ -36,14 +36,14 @@ const lines = [];
 function hostOk() {
     var m = document.getElementById("msgs");
     if (m) {
-        m.innerHTML = "GoldHEN v2.4b18.14 Loaded ...";
+        m.innerHTML = "تم تحميل GoldHEN v2.4b18.14 بنجاح ...";
     }
 }
 
 function hostFail() {
     var m = document.getElementById("msgs");
     if (m) {
-        m.innerHTML = "Failed to Load! Restart Your Console ...";
+        m.innerHTML = "فشل التحميل! أعد تشغيل جهاز PS4 ...";
         m.style.color = "yellow";
     }
 }
@@ -314,7 +314,7 @@ function makeRpc(worker) {
         if (!off) {
             var m = document.getElementById("msgs");
             if (m) {
-                m.innerHTML = 'No offsets for this firmware: <span style="color: red;">'
+                m.innerHTML = 'لا تتوفر بيانات لهذا السوفت وير: <span style="color: red;">'
                     + (key || "Unknown") + '</span>';
             }
             mark("NO-OFFSETS", key || "unknown");
@@ -676,7 +676,7 @@ function makeRpc(worker) {
                 mark("ALREADY-ROOT", "getuid=" + uid0 + " setuid(0)=" + su0);
                 var m = document.getElementById("msgs");
                 if (m) {
-                    m.innerHTML = "GoldHEN is Already Loaded ...";
+                    m.innerHTML = "GoldHEN مُحمَّل بالفعل ...";
                 }
                 return;
             }
@@ -3618,7 +3618,7 @@ function makeRpc(worker) {
             if (jailbroken) mark("JAILBROKEN", "uid=0 cr_sceAuthId=SYSCORE "
                 + "cr_sceCaps=-1 fd_rdir=rootvnode fd_jdir=rootvnode");
         } else if (committed) {
-            state("FREED BUT NOT RECLAIMED -- REBOOT NOW", "bad");
+            state("حدث خطأ في الذاكرة — أعد تشغيل الجهاز الآن", "bad");
             hostFail();
         } else {
             state("no win in " + attemptsUsed + " attempts", "warn");
@@ -3628,7 +3628,7 @@ function makeRpc(worker) {
     } catch (e) {
         mark("FAILED", e && e.message ? e.message : String(e));
         try {
-            stateEl.textContent = "FAILED -- see log";
+            stateEl.textContent = "فشلت العملية — راجع سجل التفاصيل";
             stateEl.className = "bad";
         } catch (e2) { }
         hostFail();
@@ -3834,7 +3834,7 @@ function makeRpc(worker) {
             mark("REBOOT-REQUIRED", (committed2 ? "TWO aliased pairs are live (0x80 rthdr " + "and 0x100 pktopts). " : "") + "do not keep browsing and do not close the "
                 + "browser normally. power the console off and back on.");
             try {
-                stateEl.textContent = "REBOOT THE CONSOLE";
+                stateEl.textContent = "أعد تشغيل جهاز PS4";
                 stateEl.className = "bad";
             } catch (e) { }
             if (!payloadRunning) {
@@ -3858,10 +3858,10 @@ function makeRpc(worker) {
                     : "") + ". See the stage 8/9/10 marks for what is left.");
             try {
                 stateEl.textContent = payloadRunning
-                    ? "ALL DONE"
-                    : kpatched ? "ROOT + KERNEL PATCHED -- NO REBOOT"
-                    : jailbroken ? "ROOT -- NO REBOOT NEEDED"
-                    : "REPAIRED -- NO REBOOT NEEDED";
+                    ? "اكتملت العملية"
+                    : kpatched ? "تم تعديل الكيرنل — لا حاجة لإعادة التشغيل"
+                    : jailbroken ? "تم منح الصلاحيات — لا حاجة لإعادة التشغيل"
+                    : "تم الإصلاح — لا حاجة لإعادة التشغيل";
                 stateEl.className = "ok";
             } catch (e) { }
         }

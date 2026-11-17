@@ -32,22 +32,22 @@ const params = new URLSearchParams(location.search);
 
 function hostOk() {
   var m = document.getElementById("msgs") || document.getElementById("msg");
-  if (m) m.innerHTML = "GoldHEN v2.4b18.14 Loaded ...";
+  if (m) m.innerHTML = "تم تحميل GoldHEN v2.4b18.14 بنجاح ...";
 }
 function hostFail() {
   var m = document.getElementById("msgs") || document.getElementById("msg");
   if (m) {
-    m.innerHTML = "Failed to Load! Restart Your Console ...";
+    m.innerHTML = "فشل التحميل! أعد تشغيل جهاز PS4 ...";
     m.style.color = "yellow";
   }
 }
 function hostAlready() {
   var m = document.getElementById("msgs") || document.getElementById("msg");
-  if (m) m.innerHTML = "GoldHEN is Already Loaded ...";
+  if (m) m.innerHTML = "GoldHEN مُحمَّل بالفعل ...";
 }
 function hostRetry() {
   var m = document.getElementById("msgs") || document.getElementById("msg");
-  if (m) m.innerHTML = "Failed to Load! Reopen the Browser ...";
+  if (m) m.innerHTML = "فشل التحميل! اقفل المتصفح وافتحه من جديد ...";
 }
 
 /* The retry notice. Two things lead here: the chain throws, or it stalls

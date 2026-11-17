@@ -104,3 +104,68 @@ a {
     background-image: linear-gradient(145deg, #fff5b9 0%, #ffd92e 44%, #bf8700 100%);
     box-shadow: 0 0 18px rgba(255,208,21,.98);
 }
+/* Shared identity line on the home page and every interactive firmware tab. */
+.ashraf-site-footer {
+    position: fixed;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: calc(100% - 24px);
+    box-sizing: border-box;
+    padding: 5px 18px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.35;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px #000;
+    background-color: rgba(0, 14, 41, 0.68);
+    border-radius: 9px;
+    z-index: 100;
+    text-align: center;
+    pointer-events: none;
+}
+.ashraf-site-footer span { margin-left: 10px; }
+.ashraf-developer-credits {
+    position: fixed;
+    bottom: 62px;
+    left: 0;
+    right: 0;
+    z-index: 90;
+    margin: 0 !important;
+    font-size: 18px;
+    line-height: 1.4;
+}
+.ashraf-site-footer a {
+    color: #ff5353;
+    text-decoration: none;
+    pointer-events: auto;
+}
+.ashraf-site-footer a:hover { color: #ffb3b3; }
+
+/* Reuse the former visible credits position for the single replacement identity line. */
+.ashraf-site-footer.ashraf-credit-slot { bottom: 62px; }
+
+/* Home page: show the replacement credit below the selection buttons, near the original design position on PS4. */
+.ashraf-site-footer.ashraf-home-credit {
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    margin: 80px auto 12px;
+    padding: 0 8px;
+    background: transparent;
+    border-radius: 0;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-shadow: 1px 2px 5px #000, 0 0 10px #000;
+}
+/* Narrower/shorter PlayStation browser windows: slightly smaller text. */
+@media (max-width: 760px) {
+    .ashraf-site-footer.ashraf-home-credit { font-size: 17px; }
+}
