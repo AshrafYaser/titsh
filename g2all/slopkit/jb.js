@@ -1,7 +1,7 @@
-import { establishPrimitive } from "core.js";
-import { installWindowP, pairStatus } from "mem.js";
-import { int64 } from "int64.js";
-import { offsetsFor, PS4 } from "ps4_offsets.js";
+import { establishPrimitive } from "./core.js";
+import { installWindowP, pairStatus } from "./mem.js";
+import { int64 } from "./int64.js";
+import { offsetsFor, PS4 } from "./ps4_offsets.js";
 
 function ensureHostConsole() {
   var hide =
@@ -1003,7 +1003,7 @@ let mainMf = null,
          page may run that. */
       let agOk = false, agRan = false;
       try {
-        const ag = await import("afterglow.js");
+        const ag = await import("./afterglow.js");
         // Exactly what afterglow reaches for, counted rather than guessed.
         const agCtx = {
           p: p, callAddr: callAddr, bufAddr: bufAddr, errno: errno,

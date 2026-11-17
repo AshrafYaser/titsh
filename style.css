@@ -124,6 +124,7 @@ a {
     z-index: 100;
     text-align: center;
     pointer-events: none;
+    white-space: nowrap;
 }
 .ashraf-site-footer span { margin-left: 10px; }
 .ashraf-developer-credits {
@@ -146,26 +147,8 @@ a {
 /* Reuse the former visible credits position for the single replacement identity line. */
 .ashraf-site-footer.ashraf-credit-slot { bottom: 62px; }
 
-/* Home page: show the replacement credit below the selection buttons, near the original design position on PS4. */
-.ashraf-site-footer.ashraf-home-credit {
-    position: static;
-    left: auto;
-    bottom: auto;
-    transform: none;
-    display: block;
-    width: auto;
-    max-width: 100%;
-    margin: 80px auto 12px;
-    padding: 0 8px;
-    background: transparent;
-    border-radius: 0;
-    text-align: center;
-    font-size: 20px;
-    line-height: 1.5;
-    white-space: nowrap;
-    text-shadow: 1px 2px 5px #000, 0 0 10px #000;
-}
-/* Narrower/shorter PlayStation browser windows: slightly smaller text. */
+
+/* Same placement and typography on the home page and GoldHEN tabs. */
 @media (max-width: 760px) {
-    .ashraf-site-footer.ashraf-home-credit { font-size: 17px; }
+  .ashraf-site-footer {font-size: 16px; padding: 5px 8px;}
 }

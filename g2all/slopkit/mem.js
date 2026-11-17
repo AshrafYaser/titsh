@@ -1,9 +1,9 @@
-import { int64 } from "int64.js";
+import { int64 } from "./int64.js";
 
 import {
     releaseFakeCell, fakeCellReleased,
     carrierHeaderCopy, carrierHomeVector
-} from "core.js";
+} from "./core.js";
 
 let carrier = null;
 

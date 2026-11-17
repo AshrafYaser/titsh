@@ -25,25 +25,25 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 // * RESTORE - code will repair kernel panic vulnerability
 // * MEMLEAK - memory leaks that our code will induce
 
-import { Int } from "module/int64.js";
-import { mem } from "module/mem.js";
-import { log, die, hex, hexdump } from "module/utils.js";
-import { cstr, jstr } from "module/memtools.js";
-import { page_size, context_size } from "module/offset.js";
-import { Chain } from "module/chain.js";
+import { Int } from "./module/int64.js";
+import { mem } from "./module/mem.js";
+import { log, die, hex, hexdump } from "./module/utils.js";
+import { cstr, jstr } from "./module/memtools.js";
+import { page_size, context_size } from "./module/offset.js";
+import { Chain } from "./module/chain.js";
 
-import { View1, View2, View4, Word, Long, Pointer, Buffer } from "module/view.js";
+import { View1, View2, View4, Word, Long, Pointer, Buffer } from "./module/view.js";
 
-import * as rop from "module/chain.js";
-import * as config from "config.js";
+import * as rop from "./module/chain.js";
+import * as config from "./config.js";
 
 // static imports for firmware configurations
-import * as fw_ps4_700 from "lapse/700.js";
-import * as fw_ps4_750 from "lapse/750.js";
-import * as fw_ps4_751 from "lapse/751.js";
-import * as fw_ps4_800 from "lapse/800.js";
-import * as fw_ps4_850 from "lapse/850.js";
-import * as fw_ps4_852 from "lapse/852.js";
+import * as fw_ps4_700 from "./lapse/700.js";
+import * as fw_ps4_750 from "./lapse/750.js";
+import * as fw_ps4_751 from "./lapse/751.js";
+import * as fw_ps4_800 from "./lapse/800.js";
+import * as fw_ps4_850 from "./lapse/850.js";
+import * as fw_ps4_852 from "./lapse/852.js";
 
 const t1 = performance.now();
 

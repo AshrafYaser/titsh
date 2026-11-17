@@ -33,15 +33,15 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 //   * Helped in figuring out the size of JSC::ArrayBufferContents and its
 //     needed offsets on different firmwares (PS5).
 
-import { Int } from "module/int64.js";
-import { Memory } from "module/mem.js";
-import { KB, MB } from "module/offset.js";
-import { BufferView } from "module/rw.js";
+import { Int } from "./module/int64.js";
+import { Memory } from "./module/mem.js";
+import { KB, MB } from "./module/offset.js";
+import { BufferView } from "./module/rw.js";
 
-import { die, DieError, log, clear_log, sleep, hex, align } from "module/utils.js";
+import { die, DieError, log, clear_log, sleep, hex, align } from "./module/utils.js";
 
-import * as config from "config.js";
-import * as off from "module/offset.js";
+import * as config from "./config.js";
+import * as off from "./module/offset.js";
 
 // check if we are running on a supported firmware version
 const [is_ps4, version] = (() => {
@@ -833,7 +833,7 @@ async function main() {
   await make_arw(rdr, view2, pop);
 
   clear_log();
-  import("lapse.js");
+  import("./lapse.js");
 }
 setTimeout(() => {
     main();

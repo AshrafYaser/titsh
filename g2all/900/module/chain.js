@@ -15,9 +15,9 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
-import { Int, lohi_from_one } from 'int64.js';
-import { get_view_vector } from 'memtools.js';
-import { Addr } from 'mem.js';
+import { Int, lohi_from_one } from './int64.js';
+import { get_view_vector } from './memtools.js';
+import { Addr } from './mem.js';
 import * as config from '../config.js';
 
 // put the sycall names that you want to use here
